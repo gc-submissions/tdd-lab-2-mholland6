@@ -14,7 +14,10 @@ describe("Cart", () => {
     console.log(product);
     cart.add(product);
     console.log(cart)
-    expect(cart.items).toEqual(cart.items);  
+    // expect(cart.items[0]).toEqual(product);  
+    // expect(cart.items.length).toEqual(1);  
+    expect(cart.items).toEqual([product]);
+
   });
   test("calling add twice adds two product objects" , () => {
     const product1 = new Product("oranges", 6, false);
@@ -23,7 +26,8 @@ describe("Cart", () => {
     cart.add(product1);
     cart.add(product2)
     //console.log(cart)
-    expect(cart.items).toEqual(cart.items);  
+    //change this too
+    expect(cart.items).toEqual([product1, product2]);  
   });
   test("calling getItemCount returns array length, first test" , () => {
     const product1 = new Product("oranges", 6, false);

@@ -1,7 +1,7 @@
 // this section doesn't work yet
 
 
-const formatCurrency = function(amount) {
+function formatCurrency(amount) {
   //const formattedString = "";
   if (amount < 0){
     amount = amount.toFixed(2);
@@ -26,10 +26,7 @@ function getCoins(cents) {
   let numDimes = 0;
   let numNickels = 0;
   let numPennies = 0;
-  let newObj = {quarters: numQuarters, 
-                dimes: numDimes, 
-                nickels: numNickels, 
-                pennies: numPennies}  }
+   
   while (total > 0 ) {
     if (total >= 25) {
         total -= 25;
@@ -44,9 +41,14 @@ function getCoins(cents) {
         total -= 1;
         numPennies++;
     }
-  return newObj;
+    
   }
-  
+  let newObj = {quarters: numQuarters, 
+    dimes: numDimes, 
+    nickels: numNickels, 
+    pennies: numPennies}
+  return newObj;
+}
 
 
 
