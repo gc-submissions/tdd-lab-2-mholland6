@@ -1,3 +1,5 @@
+const formatCurrency = require("../src/js/money-functions");
+
 describe("formatCurrency", () => {
   test.todo("add formatCurrency tests here");
 });
