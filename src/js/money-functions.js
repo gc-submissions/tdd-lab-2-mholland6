@@ -2,31 +2,26 @@
 
 
 function formatCurrency(amount) {
-  //const formattedString = "";
-  if (amount < 0){
+  if (amount === 0){
+    amount = "$0.00";
+  } else if (amount < 0){
+    amount = amount * -1;
     amount = amount.toFixed(2);
-    amount = "$" + amount; 
+    amount = "-$" + amount; 
   } else {
-    console.log(amount);
-    amount = amount.toFixed()
-    console.log(amount);
+    amount = amount.toFixed(2);
     amount = "$" + amount;
-    console.log(amount);
   }
   return amount;
 }
-const test = formatCurrency(1);
-console.log(test);
-const test2 = formatCurrency(-1);
-console.log(test2)
+
 
 function getCoins(cents) {
   let total = cents;
   let numQuarters = 0;
   let numDimes = 0;
   let numNickels = 0;
-  let numPennies = 0;
-   
+  let numPennies = 0;   
   while (total > 0 ) {
     if (total >= 25) {
         total -= 25;
@@ -41,15 +36,14 @@ function getCoins(cents) {
         total -= 1;
         numPennies++;
     }
-    
+    let newObj = {quarters: numQuarters, 
+      dimes: numDimes, 
+      nickels: numNickels, 
+      pennies: numPennies}  
   }
-  let newObj = {quarters: numQuarters, 
-    dimes: numDimes, 
-    nickels: numNickels, 
-    pennies: numPennies}
   return newObj;
 }
 
 
 
-module.exports = {formatCurrency, getCoins};
+module.exports = formatCurrency;

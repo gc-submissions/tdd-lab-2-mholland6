@@ -10,10 +10,7 @@ describe("Cart", () => {
   test("calling add adds one product object" , () => {
     const product = new Product("oranges", 6, false);
     const cart = new Cart();
-    console.log(cart);
-    console.log(product);
     cart.add(product);
-    console.log(cart)
     // expect(cart.items[0]).toEqual(product);  
     // expect(cart.items.length).toEqual(1);  
     expect(cart.items).toEqual([product]);
@@ -99,7 +96,6 @@ describe("Cart", () => {
     const cart = new Cart();
     cart.add(product1);
     cart.add(product2);
-    console.log(cart.getTax());
     //const totalWithTax = cart.getTotalWithTax();
     expect(cart.getTax()).toBeCloseTo(.1);
   });
@@ -111,7 +107,7 @@ describe("Cart", () => {
     cart.add(product1);
     cart.add(product2);
     cart.add(product3);
-    console.log(cart.getTax());
+    
     //const totalWithTax = cart.getTotalWithTax();
     expect(cart.getTax()).toBeCloseTo(.1);
   });
